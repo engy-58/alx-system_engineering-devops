@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1a | awk 'BEGIN{FS="[\n\t]"; RS=""} {for(i=1;i<=NF;i++) {if($i~/^\.$/) {print "./,"} else if($i~/^\.\.$/) {print "../,"} else if($i~/^d/) {print $i"/,"} else {print $i","}}}' | tr -d '\n'; echo
+printf "%s\n" ./* | sort -d | awk '{printf "%s%s", $0~/\/$/ ? $0",":$0","} END {print ""}'
