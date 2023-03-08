@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s\n" ./* | sort -d | awk '{printf "%s%s", $0~/\/$/ ? $0",":$0","} END {print ""}'
+printf "%s\n" ./* | sort -d | awk '{printf "%s%s", $0~/\/$/ ? $0",":$0","} END {print ""}' | sed 's/\.\///;s/\(.*\),/\1/'
