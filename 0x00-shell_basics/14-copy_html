@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -n ./*.html .. | grep -v "’./.html’" | awk '{print $2}' | xargs basename -a | xargs echo "Copying"
+cp -n ./*.html .. | grep -v "’./.html’" | awk '{print $2}' | xargs basename -a | xargs 
