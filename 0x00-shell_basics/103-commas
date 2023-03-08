@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1 | { echo "./"; echo "../"; grep -v "^$" | grep -vE "^\.\.?$" | LC_COLLATE=C sort -df; echo; } | paste -sd ","
+ls -a1 --group
